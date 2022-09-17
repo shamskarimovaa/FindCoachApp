@@ -1,0 +1,3 @@
+<template>
+    REQUESTS LIST
+</template>
