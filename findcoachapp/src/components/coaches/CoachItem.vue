@@ -1,25 +1,23 @@
 <template>
-    <li>
-        <h3>{{ fullName }}</h3>
-  <h4>${{ rate }}/hour</h4>
-  <span v-for="area in areas" :key="area">{{ area }}</span>
-  <div class="actions">
-    <router-link :to="contactLink">Contact</router-link>
-  <router-link :to="detailsLink">ViewDetails</router-link>
-  </div>
-    </li>
-
-
+  <li>
+    <h3>{{ fullName }}</h3>
+    <h4>${{ rate }}/hour</h4>
+    <base-badge v-for="area in areas" :key="area" :mode="area" :title="area">{{ area }}</base-badge>
+    <div class="actions">
+      <base-button link mode="outline" :to="contactLink">Contact</base-button>
+      <base-button :to="detailsLink">ViewDetails</base-button>
+    </div>
+  </li>
 </template>
 <script>
 export default {
-  props: ["firstName", "surname", "areas", "id", 'rate'],
+  props: ["firstName", "surname", "areas", "id", "rate"],
   computed: {
     fullName() {
       return this.firstName + " " + this.surname;
     },
     contactLink() {
-      return "/coach/" + this.id + "contact";
+      return "/coach/" + this.id + "/contact";
     },
     detailsLink() {
       return "/coach/" + this.id;
