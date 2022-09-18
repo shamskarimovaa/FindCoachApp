@@ -5,7 +5,7 @@
     <base-badge v-for="area in areas" :key="area" :mode="area" :title="area">{{ area }}</base-badge>
     <div class="actions">
       <base-button link mode="outline" :to="contactLink">Contact</base-button>
-      <base-button :to="detailsLink">ViewDetails</base-button>
+      <base-button link :to="detailsLink">ViewDetails</base-button>
     </div>
   </li>
 </template>
