@@ -32,7 +32,11 @@ export default {
   },
   data(){
     return {
-      options: {}
+      options: {
+        frontend:true,
+        backend: true,
+        career: true
+      }
     }
   },
   computed: {
