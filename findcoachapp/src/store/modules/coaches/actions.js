@@ -1,7 +1,8 @@
+
 export default {
   register(context, payload) {
     const formData = {
-      id: "c3",
+      id: context.rootGetters.userId,
       firstName: payload.first,
       lastName: payload.last,
       areas: payload.areas,
@@ -11,4 +12,5 @@ export default {
     console.log(formData)
     context.commit("mutateCoaches", formData);
   },
+  
 };
